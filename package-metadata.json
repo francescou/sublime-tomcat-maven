@@ -1,0 +1,5 @@
+{
+    "url": "http://www.uliana.it/francesco/",
+    "version": "2013.05.07.20.57.00",
+    "description": "updates static resources in META-INF, useful when running a webapp with tomcat-maven-plugin."
+}
