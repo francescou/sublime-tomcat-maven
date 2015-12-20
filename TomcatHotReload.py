@@ -13,7 +13,7 @@ import re
 import shutil
 import sublime_plugin
 
-RESOURCES_PATH = 'src/main/resources/META-INF'
+RESOURCES_PATH = os.path.join('src', 'main', 'resources', 'META-INF')
 
 class ReloadListener(sublime_plugin.EventListener):
     '''
