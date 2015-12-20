@@ -25,6 +25,6 @@ class ReloadListener(sublime_plugin.EventListener):
         '''
         path = view.file_name()
         if RESOURCES_PATH in path:
-            grps = re.match(r'^(.*)/' + RESOURCES_PATH + '/(.*)$', path)
-            dest = os.path.join(grps.group(1), 'target/classes/META-INF', grps.group(2))
+            grps = re.match(r'^(.*)' + os.path.sep + RESOURCES_PATH + os.path.sep + '(.*)$', path)
+            dest = os.path.join(grps.group(1), 'target', 'classes', 'META-INF', grps.group(2))
             shutil.copy2(path, dest)
