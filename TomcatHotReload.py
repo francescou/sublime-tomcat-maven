@@ -15,7 +15,7 @@ import sublime_plugin
 
 RESOURCES_PATH = 'src/main/resources/META-INF'
 
-class CoolListener(sublime_plugin.EventListener):
+class ReloadListener(sublime_plugin.EventListener):
     '''
     listener class
     '''
