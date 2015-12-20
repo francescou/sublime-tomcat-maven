@@ -1,11 +1,30 @@
-import sublime, sublime_plugin, shutil, re, os
+'''
+Sublime Text plugin to allow resource hot-reloading, useful with tomcat-maven-plugin
 
-project = 'cool-common'
+it will copy to target/classes/META-INF/$PATH each time
+ a resource src/main/resources/META-INF/$PATH is saved
+
+e.g. cp src/main/resources/META-INF/js/script.js target/classes/META-INF/js/script.js
+
+'''
+
+import os
+import re
+import shutil
+import sublime_plugin
+
+RESOURCES_PATH = 'src/main/resources/META-INF'
 
 class CoolListener(sublime_plugin.EventListener):
-  def on_post_save(self, view):
-    path = view.file_name()
-    if (project in path):
-        grps = re.match(r'^(.*' + project + ').*(META\-INF.*)$', path)
-        dest = os.path.join(grps.group(1), 'target', 'classes', grps.group(2))
-        shutil.copy2(path, dest)
+    '''
+    listener class
+    '''
+    def on_post_save(self, view):
+        '''
+        on_post_save listener action
+        '''
+        path = view.file_name()
+        if RESOURCES_PATH in path:
+            grps = re.match(r'^(.*)/' + RESOURCES_PATH + '/(.*)$', path)
+            dest = os.path.join(grps.group(1), 'target/classes/META-INF', grps.group(2))
+            shutil.copy2(path, dest)
