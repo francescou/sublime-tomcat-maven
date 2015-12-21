@@ -6,8 +6,6 @@ sublime-tomcat-maven is a Sublime Text plugin used to update static resources in
 
 ## Installation
 
-* Install [Package Control](https://packagecontrol.io/installation)
-* `CTRL-Shift-P` and then select __Package Control: Add Repository__
-* Paste in the GitHub address https://github.com/francescou/sublime-tomcat-maven
-* `CTRL-Shift-P` and then __Package Control: Install Package__
-* Now you should see __sublime-tomcat-maven__ listed. Select it to install.
+1. Open [Package Control](https://packagecontrol.io/installation): Preferences -> Package Control
+2. Select Package Control: Install Package
+3. Type **Tomcat​Maven​Hot​Reload** into the search box and select the package to install it
